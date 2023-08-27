@@ -13,7 +13,7 @@ body {
     width: 60%;
     height: 700px;
     margin: 0 auto;
-    background-color: beige;
+    background-color: lightblue;
 }
 
 #clock {
@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  color: maroon;
+  color: #660033;
 }
 
 h2 {
@@ -40,7 +40,7 @@ h2 {
     font-family: Verdana;
     font-size: 0.6em;
     padding: 0.7em;
-  color: maroon;
+  color: #660033;
 }
 
 label {
@@ -48,7 +48,7 @@ label {
 }
 
 .timeofday {
-    background-color: #eee;
+    background-color: lightseagreen;
 }
 
 .bigger {
@@ -63,19 +63,28 @@ label {
 #buttonHolder {
     text-align: center;
 }
+#add {
+    background-color: lightgoldenrodyellow;
+    color: #660033;
+}
 #setButton {
-    background-color:white;
-    color: maroon;
+    background-color: lightgoldenrodyellow;
+    color: #660033;
     margin: 10px 10px;
 }
 #fed {
     background-color:white;
-    color: maroon;
+    color: #660033;
+    margin: 10px 10px;
+}
+#reset {
+    background-color:white;
+    color: #660033;
     margin: 10px 10px;
 }
 #clearButton {
-    background-color:maroon;
-    color: beige;
+    background-color:#660033;
+    color: lightgoldenrodyellow;
     margin: 10px 10px;
 }
 #notification {

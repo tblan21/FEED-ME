@@ -68,10 +68,19 @@ label {
     color: maroon;
     margin: 10px 10px;
 }
+#fed {
+    background-color:white;
+    color: maroon;
+    margin: 10px 10px;
+}
 #clearButton {
     background-color:maroon;
     color: beige;
     margin: 10px 10px;
+}
+#notification {
+    padding: 40px;
+    text-align: center;
 }
 #pet-container {
     text-align: center;

@@ -12,6 +12,13 @@ let fed = document.getElementById('fedButton');
 
 let reset = document.getElementById('resetButton')
 
+let petName;
+
+// set pet's name
+function getPetName() {
+    petName = document.getElementById('petName').value;
+}
+
 // display current time by the second
 let currentTime = setInterval(function(){
     let date = new Date();
@@ -82,14 +89,6 @@ function secMenu(){
 }
 secMenu();
 
-// global variable pet name
-let petName;
-
-// set pet's name
-function getPetName() {
-    petName = document.getElementById('petName').value;
-}
-
 function setButton() {
     // if no pet name, prompt user to enter name
     if (!petName)
@@ -131,9 +130,8 @@ function setButton() {
     const alarmSet = document.getElementById("alarm-set");
     alarmSet.appendChild(alarmCreated);
     
-    /*function to calcutate the current time 
-    then compare it to the alarmtime and play a sound when they are equal
-    */
+    // function to calcutate the current time 
+    // then compare it to the alarmtime and play a sound when they are equal
    setInterval(function(){
        
        let date = new Date();

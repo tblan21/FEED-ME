@@ -171,9 +171,18 @@ function fedButton() {
     alreadyFed.appendChild(fedReminder);
     fed.innerHTML = '';
     alarmSet.innerText = '';
+    reset.innerHTML = `<button id='reset'>Reset Alarm</button>`;
+};
+
+function resetButton(){
+    setButton();
+    reset.innerHTML = '';
+    alarmSet.innerText = ' ';
+    alreadyFed.innerText = ' ';
 };
 
 function clearButton(){
+    reset.innerHTML = '';
     fed.innerHTML = '';
     alarmSet.innerText = ' ';
     alreadyFed.innerText = ' ';

@@ -15,3 +15,61 @@ body {
     margin: 0 auto;
     background-color: beige;
 }
+
+#clock {
+    height:120px;
+    font-size: 90px;
+    width: 100%;
+    font-family: serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  color: maroon;
+}
+
+h2 {
+	text-align:center;
+  
+
+}
+
+#alarm-container {
+	text-align:center;
+    width: 100%;
+    font-family: Verdana;
+    font-size: 0.6em;
+    padding: 0.7em;
+  color: maroon;
+}
+
+label {
+	display:inline-block;
+}
+
+.timeofday {
+    background-color: #eee;
+}
+
+.bigger {
+    font-weight:bold;
+    font-size: 18px;
+}
+
+#sounds {
+    text-align: center;
+    padding-top: 20px;
+}
+#buttonHolder {
+    text-align: center;
+}
+#setButton {
+    background-color:white;
+    color: maroon;
+    margin: 10px 10px;
+}
+#clearButton {
+    background-color:maroon;
+    color: beige;
+    margin: 10px 10px;
+}

@@ -77,7 +77,20 @@ function secMenu(){
 }
 secMenu();
 
+// global variable pet name
+let petName;
+
+// set pet's name
+function getPetName() {
+    petName = document.getElementById('petName').value;
+}
+
 document.getElementById('setButton').addEventListener("click" , function alarmSet() {
+    // if no pet name, prompt user to enter name
+    if (!petName)
+        return alert( `Please enter your pet's name`);
+    else 
+
 
     let hr = document.getElementById('alarmhrs');
 	
@@ -104,6 +117,13 @@ document.getElementById('setButton').addEventListener("click" , function alarmSe
     //when alarmtime is equal to currenttime then play a sound
 	let h2 = document.getElementById('clock');
     
+    
+    // notification of alarm time
+    const alarmCreated = document.createElement("p")
+    const node = document.createTextNode("Reminder set to feed " + petName + " at " + alarmTime)
+    alarmCreated.appendChild(node);
+    const notification = document.getElementById("notification");
+    notification.appendChild(alarmCreated);
     
     /*function to calcutate the current time 
     then compare it to the alarmtime and play a sound when they are equal

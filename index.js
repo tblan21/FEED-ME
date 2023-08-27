@@ -19,13 +19,10 @@ let currentTime = setInterval(function(){
 
 	//convert military time to standard time
     
-	if (hours < 0) {
-        hours = hours * -1;
-	} else if (hours == 0) {
-        hours = 12;
-	} else {
+	if (hours > 12) 
+        hours = hours - 12;
+    else 
         hours = hours;
-	}
     
 	
 	h2.textContent = addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds) + "" + ampm;

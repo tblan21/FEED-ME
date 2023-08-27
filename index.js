@@ -4,6 +4,14 @@ let sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/explosions/e
 
 let h2 = document.getElementById('clock');
 
+let alarmSet = document.getElementById('alarm-set');
+
+let alreadyFed = document.getElementById("already-fed");
+
+let fed = document.getElementById('fedButton');
+
+let reset = document.getElementById('resetButton')
+
 // display current time by the second
 let currentTime = setInterval(function(){
     let date = new Date();
@@ -82,13 +90,13 @@ function getPetName() {
     petName = document.getElementById('petName').value;
 }
 
-document.getElementById('setButton').addEventListener("click" , function alarmSet() {
+function setButton() {
     // if no pet name, prompt user to enter name
     if (!petName)
         return alert( `Please enter your pet's name`);
     else 
 
-    document.getElementById('fedButton').innerHTML = '<button id=\'fed\'>FED!</button>';
+    fed.innerHTML = `<button id='fed'>FED!</button>`;
 
     let hr = document.getElementById('alarmhrs');
 	
@@ -120,8 +128,8 @@ document.getElementById('setButton').addEventListener("click" , function alarmSe
     const alarmCreated = document.createElement("p")
     const node = document.createTextNode("Reminder set to feed " + petName + " at " + alarmTime)
     alarmCreated.appendChild(node);
-    const notification = document.getElementById("notification");
-    notification.appendChild(alarmCreated);
+    const alarmSet = document.getElementById("alarm-set");
+    alarmSet.appendChild(alarmCreated);
     
     /*function to calcutate the current time 
     then compare it to the alarmtime and play a sound when they are equal
@@ -154,28 +162,23 @@ document.getElementById('setButton').addEventListener("click" , function alarmSe
 		}    
     },1000);
     
-});
+};
 
-document.getElementById('fedButton').addEventListener("click", function(){
+function fedButton() {
     const fedReminder = document.createElement("p")
-    const node = document.createTextNode(petName + ` has been fed today! Click "Clear Alarm" to create a new alarm.`)        
+    const node = document.createTextNode(petName + ` has been fed today! Click Reset to set tomorrow's alarm.`)        
     fedReminder.appendChild(node);
-    const alreadyFed = document.getElementById("already-fed");
     alreadyFed.appendChild(fedReminder);
-    document.getElementById('fedButton').innerHTML = '';
-    alarmSet();
-});
+    fed.innerHTML = '';
+    alarmSet.innerText = '';
+};
 
-// function notFedToday() {
-//     document.getElementById('already-fed').innerText = '';
-// };
-
-document.getElementById('clearButton').addEventListener("click", function(){
-    const notification = document.getElementById('notification');
-    notification.innerText = ' ';
+function clearButton(){
+    fed.innerHTML = '';
+    alarmSet.innerText = ' ';
+    alreadyFed.innerText = ' ';
     document.getElementById('alarmhrs').disabled = false;
     document.getElementById('alarmmins').disabled = false;
     document.getElementById('alarmsecs').disabled = false;
     document.getElementById('ampm').disabled = false;
-    sound.pause();
-});
+};

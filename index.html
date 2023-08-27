@@ -44,17 +44,18 @@
 
 		<div id='buttonHolder'>
 			<div>
-				<button  id='setButton'>Set Alarm</button>
+				<button  id='setButton' onclick="setButton();">Set Alarm</button>
 			</div>
-            <div id="fedButton">
+            <div id="fedButton" onclick="fedButton();">
                 
             </div>
 			<div>
-				<button  id='clearButton'>Clear Alarm</button>
+				<button  id='clearButton' onclick="clearButton();">Clear Alarm</button>
 			</div>
 		</div>
         <div id="notification">
             <div id="already-fed"></div>
+			<div id="alarm-set"></div>
         </div>
 		<script type='text/javascript' src='index.js'></script>
 	</body>

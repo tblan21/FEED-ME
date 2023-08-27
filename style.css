@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+    padding-top:50px;
+}
+
+
+
+body {
+    padding: 40px;
+    width: 60%;
+    height: 700px;
+    margin: 0 auto;
+    background-color: beige;
+}

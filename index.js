@@ -91,6 +91,7 @@ document.getElementById('setButton').addEventListener("click" , function alarmSe
         return alert( `Please enter your pet's name`);
     else 
 
+    document.getElementById('fedButton').innerHTML = '<button id=\'fed\'>FED!</button>';
 
     let hr = document.getElementById('alarmhrs');
 	
@@ -160,6 +161,20 @@ document.getElementById('setButton').addEventListener("click" , function alarmSe
     },1000);
     
 });
+
+document.getElementById('fedButton').addEventListener("click", function(){
+    const fedReminder = document.createElement("p")
+    const node = document.createTextNode(petName + ` has been fed today! Click "Clear Alarm" to create a new alarm.`)        
+    fedReminder.appendChild(node);
+    const alreadyFed = document.getElementById("already-fed");
+    alreadyFed.appendChild(fedReminder);
+    document.getElementById('fedButton').innerHTML = '';
+    alarmSet();
+});
+
+// function notFedToday() {
+//     document.getElementById('already-fed').innerText = '';
+// };
 
 document.getElementById('clearButton').addEventListener("click", function(){
     const notification = document.getElementById('notification');

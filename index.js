@@ -77,3 +77,76 @@ function secMenu(){
 }
 secMenu();
 
+document.getElementById('setButton').addEventListener("click" , function alarmSet() {
+
+    let hr = document.getElementById('alarmhrs');
+	
+	let min = document.getElementById('alarmmins');
+	
+	let sec = document.getElementById('alarmsecs');
+	
+	let ap = document.getElementById('ampm');
+    
+    
+    let selectedHour = hr.options[hr.selectedIndex].value;
+    let selectedMin = min.options[min.selectedIndex].value;
+    let selectedSec = sec.options[sec.selectedIndex].value;
+    let selectedAP = ap.options[ap.selectedIndex].value;
+
+    let alarmTime = addZero(selectedHour) + ":" + addZero(selectedMin) + ":" + addZero(selectedSec) + selectedAP;
+    console.log('alarmTime:' + alarmTime);
+    
+    document.getElementById('alarmhrs').disabled = true;
+	document.getElementById('alarmmins').disabled = true;
+	document.getElementById('alarmsecs').disabled = true;
+	document.getElementById('ampm').disabled = true;
+    
+    //when alarmtime is equal to currenttime then play a sound
+	let h2 = document.getElementById('clock');
+    
+    
+    /*function to calcutate the current time 
+    then compare it to the alarmtime and play a sound when they are equal
+    */
+   setInterval(function(){
+       
+       let date = new Date();
+       
+       let hours = date.getHours();
+       
+       let minutes = date.getMinutes();
+       
+       let seconds = date.getSeconds();
+       
+       let ampm = (date.getHours()) < 12 ? 'AM' : 'PM';
+       
+       
+       //convert military time to standard time
+       
+       if (hours < 0) {
+           hours = hours * -1;
+        } else if (hours == 0) {
+            hours = 12;
+        } else {
+            hours = hours;
+        }
+        
+        let currentTime = h2.textContent = addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds) + "" + ampm;
+        
+        
+        if (alarmTime == currentTime) {
+            sound.play();
+		}    
+    },1000);
+    
+});
+
+document.getElementById('clearButton').addEventListener("click", function(){
+    const notification = document.getElementById('notification');
+    notification.innerText = ' ';
+    document.getElementById('alarmhrs').disabled = false;
+    document.getElementById('alarmmins').disabled = false;
+    document.getElementById('alarmsecs').disabled = false;
+    document.getElementById('ampm').disabled = false;
+    sound.pause();
+});
